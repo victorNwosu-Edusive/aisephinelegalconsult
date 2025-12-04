@@ -12,13 +12,13 @@
 
 .fade-in {
   opacity: 0;
-  transform: translateY(50px) scale(0.9);
-  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .fade-in.visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
 }
 </style>
 </head>
@@ -67,12 +67,16 @@
 
 <!-- ABOUT SECTION -->
 <section id="about" class="max-w-6xl mx-auto px-6 lg:px-10 py-32 fade-in">
-    <h2 class="text-[11px] lg:text-[12px] text-slate-500 font-semibold mb-4 tracking-widest">AISEPHINE LEGAL CONSULT</h2>
+  <div class="grid md:grid-cols-2 gap-10 mb-20"> 
+    <div>
+  <h2 class="text-[11px] lg:text-[12px] text-slate-500 font-semibold mb-4 tracking-widest">AISEPHINE LEGAL CONSULT</h2>
 <h2 class="text-3xl font-semibold mb-6">About Us</h2>
 <p class="text-[16px] leading-relaxed mb-14">With over 13 years of experience, we’ve built a reputation for providing reliable legal services with honesty, 
     professionalism, and a focus on what matters most—you, the client. We take the time to understand your unique situation and guide you through every step, 
     whether it’s corporate matters, disputes, or other legal issues. Our goal is simple: to give you clear advice, protect your rights, and achieve the best possible outcome for you.</p>
-
+</div>
+<img src="./images/about-uss.png" class="object-cover object-[10%_32%] h-[400px] w-full rounded-lg" alt="">
+</div> 
 
 <div class="w-full flex-col md:flex-row flex md:items-center md:justify-center gap-6 text-[#0b1c33]">
 <div class="md:px-10"><span class="font-bold text-4xl">13 years</span>  <br />of Excellence</div>
