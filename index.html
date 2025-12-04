@@ -79,7 +79,7 @@
 </div> 
 
 <div class="w-full flex-col md:flex-row flex md:items-center md:justify-center gap-6 text-[#0b1c33]">
-<div class="md:px-10"><span class="font-bold text-4xl">13 years</span>  <br />of Excellence</div>
+<div class="md:px-10 "><span id="counter-13" class="font-bold text-4xl">0</span> <span class="font-bold text-4xl"> years</span>  <br />of Excellence</div>
 <div class="md:px-10 md:border-x-2"><span class="font-bold text-4xl">Seasoned </span><br />Lawyers</div>
 <div class="md:px-10"><span class="font-bold text-4xl">Results </span><br > Oriented</div>
 </div>
@@ -223,6 +223,37 @@ Add Office/Building Image Here
 
   window.addEventListener('scroll', checkFadeIn);
   checkFadeIn(); // Check on page load
+
+  // Counter animation for "13 years"
+  let counterStarted = false;
+  const counterElement = document.getElementById('counter-13');
+
+  function animateCounter() {
+    if (counterStarted) return;
+    const aboutSection = document.getElementById('about');
+    const sectionTop = aboutSection.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (sectionTop < windowHeight * 0.8) {
+      counterStarted = true;
+      let count = 0;
+      const target = 13;
+      const duration = 2000; // 2 seconds
+      const increment = target / (duration / 50);
+
+      const timer = setInterval(() => {
+        count += increment;
+        if (count >= target) {
+          count = target;
+          clearInterval(timer);
+        }
+        counterElement.textContent = Math.floor(count);
+      }, 50);
+    }
+  }
+
+  window.addEventListener('scroll', animateCounter);
+  animateCounter(); // Check on page load
 </script>
 
 </body>
