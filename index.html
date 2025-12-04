@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,9 +9,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
 * { font-family: 'Lexend', sans-serif; }
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 scro">
 
 
 <!-- HEADER -->
@@ -19,7 +30,7 @@
 <div class="max-w-7xl mx-auto flex justify-between items-center">
 <div class="flex gap-2 items-center">
     <img src="./images/favicon.jpg" class="h-11 w-auto" alt="">
-<h1 class="text-2xl hidden lg:block font-semibold tracking-wide">Aisephine Legal Consult</h1>
+<h1 class="md:text-2xl text-[13px] font-semibold tracking-wide">Aisephine Legal Consult</h1>
 </div>
 <nav class="hidden md:flex space-x-8 text-lg">
 <a href="#about" class="hover:text-[#c9a13b] text-[14px] transition">About</a>
@@ -27,6 +38,20 @@
 <a href="#membership" class="hover:text-[#c9a13b] transition text-[14px]">Membership</a>
 <a href="#contact" class="hover:text-[#c9a13b] transition text-[14px]">Contact</a>
 </nav>
+<button id="hamburger" class="md:hidden text-white focus:outline-none">
+  <svg id="hamburger-icon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  <svg id="close-icon" class="w-6 h-6 transition-transform duration-300 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+  </svg>
+</button>
+</div>
+<div id="mobile-menu" class="hidden md:hidden bg-[#0b1c33] px-6 py-4 transition-all duration-300 ease-in-out transform">
+  <a href="#about" class="block py-2 hover:text-[#c9a13b] text-[14px] transition menu-link">About</a>
+  <a href="#services" class="block py-2 hover:text-[#c9a13b] text-[14px] transition menu-link">Services</a>
+  <a href="#membership" class="block py-2 hover:text-[#c9a13b] text-[14px] transition menu-link">Membership</a>
+  <a href="#contact" class="block py-2 hover:text-[#c9a13b] text-[14px] transition menu-link">Contact</a>
 </div>
 </header>
 
@@ -41,7 +66,7 @@
 
 
 <!-- ABOUT SECTION -->
-<section id="about" class="max-w-6xl mx-auto px-6 lg:px-10 py-32">
+<section id="about" class="max-w-6xl mx-auto px-6 lg:px-10 py-32 fade-in">
     <h2 class="text-[11px] lg:text-[12px] text-slate-500 font-semibold mb-4 tracking-widest">AISEPHINE LEGAL CONSULT</h2>
 <h2 class="text-3xl font-semibold mb-6">About Us</h2>
 <p class="text-[16px] leading-relaxed mb-14">With over 13 years of experience, we’ve built a reputation for providing reliable legal services with honesty, 
@@ -58,7 +83,7 @@
 
 
 <!-- MEMBERSHIP SECTION -->
-<section id="membership" class="max-w-6xl mx-auto px-6 lg:px-10 py-32 bg-white">
+<section id="membership" class="max-w-6xl mx-auto px-6 lg:px-10 py-32 bg-white fade-in">
  <h2 class="text-[11px] lg:text-[12px] text-slate-500 font-semibold mb-4 tracking-widest">OUR PROFESSIONAL MEMBERSHIPS</h2>
 <h2 class="text-3xl font-semibold mb-10">Membership</h2>
 
@@ -77,7 +102,7 @@
 
 
 <!-- SERVICES SECTION -->
-<section id="services" class="max-w-6xl mx-auto px-6 lg:px-10 py-32">
+<section id="services" class="max-w-6xl mx-auto px-6 lg:px-10 py-32 fade-in">
 <h2 class="text-[11px] lg:text-[12px] text-slate-500 font-semibold mb-4 tracking-widest">WHAT WE SPECIALIZE IN</h2>
 <h2 class="text-3xl font-semibold mb-6">Our Practice areas</h2>
 
@@ -139,8 +164,9 @@ selling, leasing, or resolving land disputes, we offer expert support to safegua
 
 
 <!-- CONTACT SECTION -->
-<section id="contact" class="max-w-6xl mx-auto px-6 lg:px-10 py-32 bg-white">
-<h2 class="text-3xl font-semibold border-l-4 border-[#0b1c33] pl-4 mb-6">Contact Us</h2>
+<section id="contact" class="max-w-6xl mx-auto px-6 lg:px-10 py-32 bg-white fade-in">
+<h2 class="text-[11px] lg:text-[12px] text-slate-500 font-semibold mb-4 tracking-widest">GET IN TOUCH WITH US</h2>
+<h2 class="text-3xl font-semibold mb-6">Contact Us</h2>
 <p class="text-lg mb-4">Call: <strong>07052412151</strong></p>
 
 
@@ -155,6 +181,45 @@ Add Office/Building Image Here
 <p>&copy; 2025 Aisephine Legal Consult. All rights reserved.</p>
 </footer>
 
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const menuLinks = document.querySelectorAll('.menu-link');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    hamburgerIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+  });
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      hamburgerIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    });
+  });
+
+  // Fade-in animation on scroll
+  const fadeInElements = document.querySelectorAll('.fade-in');
+
+  function checkFadeIn() {
+    const triggerBottom = window.innerHeight * 0.8;
+
+    fadeInElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+
+      if (elementTop < triggerBottom) {
+        element.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkFadeIn);
+  checkFadeIn(); // Check on page load
+</script>
 
 </body>
 </html>
