@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aisephinelegalconsult.com.ng/sitemap.xml
